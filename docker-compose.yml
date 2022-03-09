@@ -4,14 +4,15 @@ services:
   pgsql:
     image: postgres:alpine
     ports:
-      - '5432:5432'
+      - '5432:5433'
     container_name: 'pgsql'
     restart: always
     volumes:
       - pg-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: bhayron
-      POSTGRES_PASSWORD: 21118918
+      POSTGRES_PASSWORD: secretf5
+      POSTGRES_DB: nestjs
 
   adminer:
     image: adminer
